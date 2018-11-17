@@ -23,7 +23,7 @@
                 <h1>Your Mascot Has Been Generated</h1>
                 <P>Here is your mascot:</P>
 		{% with '/mga/'|add:image as myImage %}	
-                <img style="width:50%" src="{%static myImage  %}">
+                <img class="generatedImage" src="{%static myImage  %}">
                 {% endwith %}
 		<p>If you'd like to Generate a new Mascot, click below:</p>
                 <a href="/home/generator"><button class="btn-custom btn">Generate a New Mascot</button></a>
