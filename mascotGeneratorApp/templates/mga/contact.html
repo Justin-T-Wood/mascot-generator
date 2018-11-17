@@ -1,0 +1,34 @@
+{% extends "mga/base.html" %}
+{% load staticfiles %}
+
+{% block header-image %}
+
+<div class="row header-image overlay parallax" style="background-image: url('{% static 'mga/contact.jpeg' %}')">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 home-title header-text" style="padding-top:0px; padding-bottom:0px;">
+        <div class="vertical-align-div-header">
+        <span class="vertical-align-content">GET IN TOUCH WITH THE MASCOT GENERATOR</span>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div style="background-color: #efefef;">
+    <div class="page-wrap page-padding">
+        <div class="row">
+            <div class="md-col-4" style="padding-bottom: 10px">
+                <h1>Contact Us</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-6">
+                <p>Listen, we are cats.  If you want to contact us, you need to send an e-mail to the address listed below:</p>
+                <h3>mascotgenerator@gmail.com</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

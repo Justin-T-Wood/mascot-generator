@@ -23,6 +23,23 @@
                 <h1>Generate Your Mascot</h1>
                 <p>Give us a little information about yourself by filling out the form below.  This will help us
                     to generate the purrrrfect mascot for you.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="row" style="margin-bottom:5px;">
+                        <div class="col-md-6">
+                            {{ field.label_tag }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ field }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <br> -->
+                    <div class="center" style="margin-bottom:16px">
+                        <button class="btn-custom btn" type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
