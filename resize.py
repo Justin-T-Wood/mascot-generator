@@ -2,7 +2,7 @@ import glob
 import os
 from PIL import Image
 
-filepath = "/Users/garrettdimick/tempfiles/downloads/clipart_octopus/*"
+filepath = "/Users/garrettdimick/tempfiles/downloads/clipart_cat/*"
 
 def resize_files(filepath):
     f = glob.glob(filepath)
@@ -11,6 +11,7 @@ def resize_files(filepath):
         width = 108
         height = 108
         image = im.resize((width, height))
-        image.save(file)
+        rgb = image.convert('RGB')
+        rgb.save(file)
 
 resize_files(filepath)

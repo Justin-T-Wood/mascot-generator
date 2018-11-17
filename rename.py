@@ -1,8 +1,8 @@
 import glob
 import os
 
-prefix = "octopus"
-filepath = "/Users/garrettdimick/tempfiles/downloads/clipart_octopus/*"
+prefix = "cats"
+filepath = "/Users/garrettdimick/tempfiles/downloads/clipart_cat/*"
 
 def rename_files(filepath):
     f = glob.glob(filepath)
