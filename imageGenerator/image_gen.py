@@ -2,7 +2,7 @@ import tensorflow as tf
 import tflearn
 import numpy as np
 
-def generator(x, reuse=False):
+def generator(input_layer, reuse=False):
     with tf.variable_scope('generator', reuse=reuse):
     ## design the generator network
     ## input layer is ????
@@ -28,6 +28,28 @@ def generator(x, reuse=False):
     ## fully connected with 2 layers, 0 is not a bee, 1 is a bee
     fc_layer_2 = tflearn.fully_connected(dropout_layer, 2, activation='softmax', name='fc_layer_2')
     ## network is trained with relu, categorical cross entropy loss function, and eta = 0.01
-    network = tflearn.regression(fc_layer_2, optimizer='relu',
-                        loss='categorical_crossentropy', learning_rate=0.01)
-    return network
+    gen_model = tflearn.regression(fc_layer_2, optimizer='adam',
+                               loss='categorical_crossentropy',
+                               trainable_vars=generator_variables,
+                               batch_size=64, name='target_generator')
+    generator_network = tflearn.DNN(gen_model)
+    return generator_network
+
+def discriminator(input_layer, reuse=False):
+    with tf.variable_scope('discriminator', reuse=reuse):
+        input_layer = tflearn.conv_2d(input_layer, 64, 5, 2, activation='tanh')
+        batch_norm_1 = tflearn.batch_normalization(input_layer, epsilon=1e-5, name='batch_norm_1')
+        pool_layer_0 = tflearn.avg_pool_2d(batch_norm_1, 2)
+        conv_layer = tflearn.conv_2d(pool_layer_0, 128, 5, activation='tanh')
+        pool_layer_1 = tflearn.avg_pool_2d(conv_layer, 2)
+        fully_connected_0 = tflearn.fully_connected(pool_layer_1, 1024, activation='tanh')
+        full_connected_1 = tflearn.fully_connected(fully_connected_0, 2)
+        softmax_layer = tf.nn.softmax(full_connected_1)
+        dis_model = tflearn.regression(softmax_layer, optimizer='adam',
+                                        placeholder=disc_target,
+                                        loss='categorical_crossentropy',
+                                        trainable_vars=disc_variables,
+                                        batch_size=64, name='target_disc')
+        discriminator_network = tflearn.DNN(dis_model)
+        return discriminator_network
+
