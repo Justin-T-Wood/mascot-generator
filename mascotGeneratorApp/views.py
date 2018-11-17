@@ -18,7 +18,7 @@ def generated(request):
 def generator(request):
     form = GeneratorForm(request.POST)
     if form.is_valid():
-        image = "/mascotGeneratorApp/static/mga/home5.jpeg"
+        image = "home5.jpeg"
         return render(request,'mga/generated.html', {'image': image})
     else:
         form = GeneratorForm()
