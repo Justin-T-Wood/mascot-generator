@@ -26,6 +26,9 @@
                             <a class="nav-link nav-hover" href="/home/about">About</a>
                         </li>
                         <li class="nav-item">
+                                <a class="nav-link nav-hover" href="/home/generator" active>Generator</a>
+                            </li>
+                        <li class="nav-item">
                             <a class="nav-link nav-hover" href="/home/contact">Contact</a>
                         </li>
                     </ul>
@@ -42,5 +45,34 @@
     <div>
             {% block content %}
             {% endblock %}
+    </div>
+</div>
+
+<div class="page-break"></div>
+<div style = "background-color: #5c5c5c">
+    <div class="page-wrap">
+        <div class="row">
+            <div style="height: 150x" class="col-md-4 col-sm-6 footer">
+                    <p class="footer_heading">Quick Links:</p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p style="margin:0"><a class="footer_subheading" style="text-decoration:none" href="/home/generator/">Generate a Mascot</a></p>
+                            <p style="margin:0"><a class="footer_subheading" style="text-decoration:none" href="/home/about/">About Us</a></p>
+                            <p style="margin:0"><a class="footer_subheading" style="text-decoration:none" href="/home/contact/">Contact Us</a></p>
+                        </div>
+                    </div>
+                <br>
+                <br>
+                <span style="color: white; font-size: 10px">©Copyright 2018 • Mascot Generator • All Rights Reserved</span> 
+            </div>
+            <div class="col-md-8 col-sm-6">
+                <div class="row">
+                    <div class="col-md-9"></div>
+                    <div class="col-md-3 col-sm-8">
+                        <img style="opacity:.5; padding-top: 5%"src="{% static 'mga/cat.svg' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
