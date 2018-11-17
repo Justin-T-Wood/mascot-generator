@@ -21,11 +21,11 @@ def generator(request):
 	animal =  form.cleaned_data.get('desired_animal')
 	if animal == "Cat":
 		image = "cat_collage.jpg"
-	if animal == "Turtle":
+	elif animal == "Turtle":
 		image = "turtle_collage.jpg"
-	if animal == "Dragon":
+	elif animal == "Dragon":
 		image = "dragon_collage.jpg"
-	if animal == "Octopus":
+	elif animal == "Octopus":
 		image = "octopus_collage.jpg"
 	else:
 		image = ""
