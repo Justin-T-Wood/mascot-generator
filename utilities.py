@@ -1,5 +1,6 @@
 import glob
 import os
+from PIL import Image
 
 prefix = "catsss"
 filepath = "/Users/garrettdimick/Downloads/dcgan/data/clipart_cat/*"
@@ -15,4 +16,14 @@ def rename_files(filepath):
         except IOError:
             os.remove(file)
 
+def resize_files(filepath):
+    f = glob.glob(filepath)
+    for file in f:
+        im = Image.open(file)
+        width = 108
+        height = 108
+        image = im.resize((width, height))
+        image.save(file)
+
 # rename_files(filepath)
+# resize_files(filepath)
