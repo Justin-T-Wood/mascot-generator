@@ -25,7 +25,7 @@ SECRET_KEY = '^vonyb1esq9+xfunk1%jkvtoze6o=ja=sa1*)c(*aw!c11@^05'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.mascotgenerator.com']
 
 
 # Application definition
@@ -117,5 +117,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-STATIC_ROOT = "C:/Users/justi/Documents/hackathon/mascotGeneratorApp/static/"
-STATIC_URL = '/mascotGeneratorApp/static/'
+STATIC_ROOT = ('/home/ubuntu/mga/staticfiles')
+STATIC_URL = '/static/'

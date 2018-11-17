@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
-from django.urls import path
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/home/')),
     url(r'^home/', include('mascotGeneratorApp.urls')),
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
 ]
