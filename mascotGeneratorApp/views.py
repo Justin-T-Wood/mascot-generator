@@ -18,7 +18,17 @@ def generated(request):
 def generator(request):
     form = GeneratorForm(request.POST)
     if form.is_valid():
-        image = "home5.jpeg"
+	animal =  form.cleaned_data.get('desired_animal')
+	if animal == "Cat":
+		image = "cat_collage.jpg"
+	if animal == "Turtle":
+		image = "turtle_collage.jpg"
+	if animal == "Dragon":
+		image = "dragon_collage.jpg"
+	if animal == "Octopus":
+		image = "octopus_collage.jpg"
+	else:
+		image = ""
         return render(request,'mga/generated.html', {'image': image})
     else:
         form = GeneratorForm()
