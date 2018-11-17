@@ -1,1 +1,79 @@
-<h1>home page</h1>
+{% extends "mga/base.html" %}
+{% load staticfiles %}
+
+{% block header-image %}
+
+<div class="row header-image overlay parallax" style="background-image: url('{% static 'mga/home3.jpg' %}')">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 home-title header-text" style="padding-top:0px; padding-bottom:0px;">
+        <div class="vertical-align-div-header">
+        <span class="vertical-align-content">ALL THE MASCOTS ARE CATS</span>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div style="background-color: #efefef;">
+    <div class="page-wrap page-padding">
+        <div class="row" >
+            <div class="col-md-6 vertical-center-parent">
+                <h1>Welcome to the Mascot Generator</h1>
+                <p>We are dedicated to creating the best mascot possible for your needs!  Click the link below to get started!</p>
+                <button>Get Started</button>
+            </div>
+            <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active overlay-black">
+                        <img class="d-block w-100 carousel-image" src="{% static 'mga/home.jpg' %}" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block carousel-black-text">
+                            <h5>CAT IN FIELD</h5>
+                            <p>Hope You Are Here For Cats</p>
+                        </div>
+                    </div>    
+                    <div class="carousel-item overlay-black">
+                        <img class="d-block w-100 carousel-image" src="{% static 'mga/home2.jpg' %}" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>CAT LICKING PAW</h5>
+                            <p>All We Have Is Cats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item overlay-black">
+                        <img class="d-block w-100 carousel-image" src="{% static 'mga/home4.jpeg' %}" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>CAT RELAXING</h5>
+                            <p>Don't Bother Looking For Anything Other Than Cats Here</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item overlay-black">
+                        <img class="d-block w-100 carousel-image" src="{% static 'mga/home5.jpeg' %}" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>CAT PRAYING</h5>
+                            <p>If You Want A Mascot That Isn't A Cat, You Better Look Elsewhere</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+
+{% endblock %}
